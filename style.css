@@ -1,0 +1,250 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #bcd6f0, #bdc3c7); /* Updated gradient */
+    color: #333;
+    line-height: 1.6;
+    transition: background 0.5s ease;
+    animation: gradientFlow 10s infinite alternate ease-in-out;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.8s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    animation: glow 2s infinite;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.85);
+    animation: fadeIn 2s ease;
+}
+
+#hero .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    animation: bounceIn 1.5s ease-out;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 1rem;
+    animation: pulse 1.5s infinite;
+}
+
+/* About Section */
+#about, #importance, #how-to-help {
+    padding: 2rem;
+    text-align: center;
+    animation: slideUp 1.2s ease-out;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s;
+    animation: popIn 1s ease;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    margin-top: 2rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Music Player */
+audio {
+    display: block;
+    margin: 2rem auto;
+    width: 80%; /* Adjust the width to your preference */
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 5px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+audio::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+}
+
+audio::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: #ff6f61;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes gradientFlow {
+    0% {
+        background: linear-gradient(to right, #cfd5db, #29df5f);
+    }
+    100% {
+        background: linear-gradient(to right, #dadde3, #66ff61);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff6f61, 0 0 15px #ff6f61;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff856b, 0 0 25px #ff856b;
+    }
+}
